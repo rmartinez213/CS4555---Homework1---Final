@@ -21,7 +21,7 @@ public class PlayerCharacter : MonoBehaviour
 
         this.gameObject.transform.rotation = spawn.transform.rotation;
         this.gameObject.transform.position = spawn.transform.position;
-
+        GetComponent<FPSInput>().enabled = true;
 
 
         Health_Pickup Obj = HealthObj.GetComponent<Health_Pickup>();
@@ -48,9 +48,15 @@ public class PlayerCharacter : MonoBehaviour
     {
         _health -= damage;
 
-        if (_health == 0)
+        if (_health <= 0) 
         {
             Debug.Log("You are dead!");
+            GetComponent<FPSInput>().enabled = false;
+            //this.gameObject.SetActive(false);
+
+        }
+        else {
+            GetComponent<FPSInput>().enabled = true;
         }
 
         Debug.Log("Health: " + _health);

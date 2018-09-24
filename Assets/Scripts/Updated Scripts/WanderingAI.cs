@@ -22,13 +22,15 @@ public class WanderingAI : MonoBehaviour
         if (_alive)
         {
             transform.Translate(0, 0, speed * Time.deltaTime); //move forward
- 
-            Vector3 offset = GameObject.Find("Player").transform.position - transform.position;
-            float sqrLen = offset.sqrMagnitude;
-            if (sqrLen < closeDistance * closeDistance)
-            {
-                print("The other transform is close to me!");
-                transform.LookAt(GameObject.Find("Player").transform.position);
+
+            if (GameObject.Find("Player")) {
+                Vector3 offset = GameObject.Find("Player").transform.position - transform.position;
+                float sqrLen = offset.sqrMagnitude;
+                if (sqrLen < closeDistance * closeDistance)
+                {
+                    print("The other transform is close to me!");
+                    transform.LookAt(GameObject.Find("Player").transform.position);
+                }
             }
 
             Ray ray = new Ray(transform.position, transform.forward);

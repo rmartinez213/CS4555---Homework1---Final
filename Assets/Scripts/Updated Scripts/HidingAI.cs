@@ -24,14 +24,15 @@ public class HidingAI : MonoBehaviour
             //transform.Translate(0, 0, speed * Time.deltaTime); // since enemy hides, no need to move
 
             //If player is next to enemy2it shall lock on to them
-            Vector3 offset = GameObject.Find("Player").transform.position - transform.position;
-            float sqrLen = offset.sqrMagnitude;
-            if (sqrLen < closeDistance * closeDistance)
-            {
-                print("The other transform is close to me!");
-                transform.LookAt(GameObject.Find("Player").transform.position);
+            if (GameObject.Find("Player")) {
+                Vector3 offset = GameObject.Find("Player").transform.position - transform.position;
+                float sqrLen = offset.sqrMagnitude;
+                if (sqrLen < closeDistance * closeDistance)
+                {
+                    print("The other transform is close to me!");
+                    transform.LookAt(GameObject.Find("Player").transform.position);
+                }
             }
-
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.SphereCast(ray, 0.75f, out hit))
