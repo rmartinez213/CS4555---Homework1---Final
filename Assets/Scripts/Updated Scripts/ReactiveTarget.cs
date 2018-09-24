@@ -6,6 +6,7 @@ public class ReactiveTarget : MonoBehaviour {
 	public void ReactToHit() {
 		WanderingAI behavior = GetComponent<WanderingAI>();
         HidingAI hiding = GetComponent<HidingAI>();
+        RunAwayAI running = GetComponent<RunAwayAI>();
 //        SceneController enemies = GetComponent<SceneController>();
 //        if (enemies == null) {
 //            Debug.LogError("Cant find SceneController ");
@@ -16,6 +17,9 @@ public class ReactiveTarget : MonoBehaviour {
 		}
         if (hiding != null) {
             hiding.SetAlive(false);
+        }
+        if (running != null) {
+            running.SetAlive(false);
         }
 
 		StartCoroutine(Die());

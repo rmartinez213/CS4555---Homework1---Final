@@ -8,18 +8,26 @@ public class Health_Pickup : MonoBehaviour
 
     void Update()
     {
-		if (other){
+        if (other)
+        {
             Vector3 offset = other.position - transform.position;
             float sqrLen = offset.sqrMagnitude;
-			if (sqrLen < closeDistance * closeDistance){
-				//Destroy static medkit object
-			    Destroy(this.gameObject);
+            if (sqrLen < closeDistance * closeDistance)
+            {
+                //Destroy static medkit object
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
 
                 //Create player object and call Increase function
-				PlayerCharacter player = other.GetComponent<PlayerCharacter>();
-				player.IncreaseHealth(3);
-			}
+                PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+                player.IncreaseHealth(3);
+            }
 
         }
+    }
+
+    public void HealthReset()
+    {
+        this.gameObject.SetActive(true);
     }
 }

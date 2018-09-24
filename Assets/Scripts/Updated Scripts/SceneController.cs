@@ -87,6 +87,54 @@ public class SceneController : MonoBehaviour
     //called every frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            Debug.ClearDeveloperConsole();
+            Debug.Log("THIS IS INSIDE SCENECONTROLLER.CS");
+
+            for (int i = 0; i < listOfEnemies.Length; i++) {
+                Object.Destroy(listOfEnemies[i]);
+            }
+
+            _isKilled = false;  //boolean that states if an enemy has been killed
+            randomInitialEnemies = Random.Range(1, 6); //Spawn 1-5 enemies in the beginning
+            currentEnemies = randomInitialEnemies; //Set the current enemies on the field
+            randomEnemyType = Random.Range(1, 4);     // 1==enemy1, 2==enemy2, 3==enemy3
+            Debug.Log("Spawning after reseting: " + randomInitialEnemies);
+            listOfEnemies = new GameObject[10]; //size of 10, since there can only be max of 10 enemies on the field
+
+            for (int i = 0; i < randomInitialEnemies; i++)
+            { //instantiate the number of ran enemies as GameObjects 
+                randomEnemyType = Random.Range(1, 4);
+
+                if (randomEnemyType == 1)
+                {
+                    Xrange = Random.Range(-22, -13);
+                    Zrange = Random.Range(-38, -20);
+                    listOfEnemies[i] = Instantiate(enemyPrefab) as GameObject;
+                    listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    float angle = Random.Range(0, 360);
+                    listOfEnemies[i].transform.Rotate(0, angle, 0);
+                }
+                else if (randomEnemyType == 2)
+                {
+                    int randomEnemy2location = Random.Range(0, 4);
+                    listOfEnemies[i] = Instantiate(enemy2Prefab) as GameObject;
+                    listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -0.737f, randomPos[randomEnemy2location].z);
+                    float angle = Random.Range(0, 360);
+                    listOfEnemies[i].transform.Rotate(0, angle, 0);
+                }
+                else if (randomEnemyType == 3)
+                {
+                    Xrange = Random.Range(35, 44);
+                    Zrange = Random.Range(-28, 14);
+                    listOfEnemies[i] = Instantiate(enemy3Prefab) as GameObject;
+                    listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    float angle = Random.Range(0, 360);
+                    listOfEnemies[i].transform.Rotate(0, angle, 0);
+                }
+            }
+        }
         for (int i = 0; i < currentEnemies; i++){ //iterate up to the new amount of possible enemies in the field
             if (listOfEnemies[i] == null)
             { //This enemy has been killed or hasnt been assigned an instance yet
