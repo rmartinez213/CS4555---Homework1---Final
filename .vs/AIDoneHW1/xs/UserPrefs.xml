@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{405DFCCE-2CF3-F78E-84DA-A837D686B9C6}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Updated Scripts/MouseLook.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Updated Scripts/RayShooter.cs" Line="6" Column="119" />
+      <File FileName="Assets/Scripts/Updated Scripts/WeaponToggleScript.cs" Line="24" Column="25" />
+      <File FileName="Assets/Scripts/Updated Scripts/Fireball.cs" Line="6" Column="84" />
+      <File FileName="Assets/Scripts/Updated Scripts/ReactiveTarget.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Updated Scripts/WanderingAI.cs" Line="41" Column="54" />
+      <File FileName="Assets/Scripts/Updated Scripts/HidingAI.cs" Line="6" Column="118" />
+      <File FileName="Assets/Scripts/Updated Scripts/PlayerCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Updated Scripts/Health_Pickup.cs" Line="27" Column="66" />
+      <File FileName="Assets/Scripts/Updated Scripts/Portal.cs" Line="17" Column="95" />
+      <File FileName="Assets/Scripts/Updated Scripts/RunAwayAI.cs" Line="21" Column="26" />
+      <File FileName="Assets/Scripts/Updated Scripts/SceneController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Updated Scripts/FPSInput.cs" Line="6" Column="67" />
+      <File FileName="Assets/Scripts/Updated Scripts/MouseLook.cs" Line="6" Column="66" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

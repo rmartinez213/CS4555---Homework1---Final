@@ -23,7 +23,7 @@ public class WanderingAI : MonoBehaviour
         {
             transform.Translate(0, 0, speed * Time.deltaTime); //move forward
 
-            if (GameObject.Find("Player")) {
+			if (GameObject.Find("Player") && GameObject.Find("Player").GetComponent<PlayerCharacter>()._health >= 0) {
                 Vector3 offset = GameObject.Find("Player").transform.position - transform.position;
                 float sqrLen = offset.sqrMagnitude;
                 if (sqrLen < closeDistance * closeDistance)
@@ -38,7 +38,7 @@ public class WanderingAI : MonoBehaviour
             if (Physics.SphereCast(ray, 0.75f, out hit))
             {
                 GameObject hitObject = hit.transform.gameObject;
-                if (hitObject.GetComponent<PlayerCharacter>())
+				if (hitObject.GetComponent<PlayerCharacter>() && hitObject.GetComponent<PlayerCharacter>()._health >= 0)
                 {
                     if (GameObject.Find("Player").transform.position != null)
                     {

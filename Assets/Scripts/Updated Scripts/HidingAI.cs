@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿//Game Programming HW1 
+//===================================================================================================================
+// Name        : HidingAI.cs //Homework1
+// Author      : Miguel Cayetano & Robert Martinez
+// Description : Script that is attached to Enemy2. Enemy 2 will turn and shoot player if within 15units.
+//===================================================================================================================
+
+using UnityEngine;
 using System.Collections;
 
 public class HidingAI : MonoBehaviour
@@ -24,7 +31,7 @@ public class HidingAI : MonoBehaviour
             //transform.Translate(0, 0, speed * Time.deltaTime); // since enemy hides, no need to move
 
             //If player is next to enemy2it shall lock on to them
-            if (GameObject.Find("Player")) {
+			if (GameObject.Find("Player") && GameObject.Find("Player").GetComponent<PlayerCharacter>()._health >= 0) {
                 Vector3 offset = GameObject.Find("Player").transform.position - transform.position;
                 float sqrLen = offset.sqrMagnitude;
                 if (sqrLen < closeDistance * closeDistance)
@@ -38,7 +45,7 @@ public class HidingAI : MonoBehaviour
             if (Physics.SphereCast(ray, 0.75f, out hit))
             {
                 GameObject hitObject = hit.transform.gameObject;
-                if (hitObject.GetComponent<PlayerCharacter>())
+				if (hitObject.GetComponent<PlayerCharacter>() && hitObject.GetComponent<PlayerCharacter>()._health >= 0)
                 {
                     if (GameObject.Find("Player").transform.position != null)
                     {

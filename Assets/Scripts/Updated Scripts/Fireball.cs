@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿//Game Programming HW1 
+//=================================================================================
+// Name        : Fireball.cs //Homework1
+// Author      : Miguel Cayetano & Robert Martinez
+// Description : Script that is attached to enemy prefabs and allows them to shoot
+//=================================================================================
+
+using UnityEngine;
 using System.Collections;
 
 public class Fireball : MonoBehaviour {

@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿//Game Programming HW1 
+//===========================================================================================
+// Name        : RunAwayAI.cs //Homework1
+// Author      : Miguel Cayetano & Robert Martinez
+// Description : Attached to Enemy 3. Will turn around and run if player gets in front of it.
+//===========================================================================================
+
+using UnityEngine;
 using System.Collections;
 
 public class RunAwayAI : MonoBehaviour

@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿//Game Programming HW1 
+//=======================================================================================
+// Name        : Health_Pickup.cs //Homework1
+// Author      : Miguel Cayetano & Robert Martinez
+// Description : Script that is attached to crates where player can walk to it and heal up
+//========================================================================================
+
+using UnityEngine;
 using System.Collections;
 public class Health_Pickup : MonoBehaviour
 {
@@ -14,8 +21,7 @@ public class Health_Pickup : MonoBehaviour
             float sqrLen = offset.sqrMagnitude;
             if (sqrLen < closeDistance * closeDistance)
             {
-                //Destroy static medkit object
-                //Destroy(this.gameObject);
+                //Set Active to false, so it can be set to true when restarting game
                 this.gameObject.SetActive(false);
 
                 //Create player object and call Increase function

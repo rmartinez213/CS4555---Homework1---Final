@@ -1,11 +1,21 @@
-﻿using UnityEngine;
+﻿//Game Programming HW1 
+//====================================================================================================================
+// Name        : Rayshooter.cs //Homework1
+// Author      : Miguel Cayetano & Robert Martinez
+// Description : Script that is attached to Camera(PLayer is parent) and allows player to shoot IFF they are not dead.
+//====================================================================================================================
+
+using UnityEngine;
 using System.Collections;
 
 public class RayShooter : MonoBehaviour {
 	private Camera _camera;
-
+	   
     //To attach bullet picture to hitpoint
-	public GameObject bullet_hole;
+	public GameObject Shotgun_bullet_hole;
+    public GameObject AK47_bullet_hole;
+	private int damage = 1;
+
 
 	void Start() {
 		_camera = GetComponent<Camera>();
@@ -22,7 +32,7 @@ public class RayShooter : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) && GameObject.Find("Player").GetComponent<PlayerCharacter>()._health >= 0) {
 			Vector3 point = new Vector3(_camera.pixelWidth/2, _camera.pixelHeight/2, 0);
 			Ray ray = _camera.ScreenPointToRay(point);
 			RaycastHit hit;
@@ -30,14 +40,26 @@ public class RayShooter : MonoBehaviour {
 				GameObject hitObject = hit.transform.gameObject;
 				ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
 				if (target != null) {
-					target.ReactToHit();
+					target.ReactToHit(damage);
 				} else {
 					//StartCoroutine(SphereIndicator(hit.point));
+     
+					Debug.Log(WeaponToggleScript.currentWeapon);
 
 
-                    //Creates bullet hole picture and destroys after 2 seconds
-					GameObject ImpactGO = Instantiate(bullet_hole, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-					Destroy(ImpactGO, 2);
+                    if (WeaponToggleScript.currentWeapon == 0)
+                    {
+                        GameObject ShotgunHole = Instantiate(Shotgun_bullet_hole, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                        Destroy(ShotgunHole, 3);
+                    }
+
+                    else
+                    {
+                        GameObject AK47 = Instantiate(AK47_bullet_hole, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                        Destroy(AK47, 2);
+
+                    }
+
 				}
 			}
 		}

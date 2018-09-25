@@ -1,8 +1,15 @@
-﻿using UnityEngine;
+﻿//Game Programming HW1 
+//==========================================================================================
+// Name        : WeaponToggleScript.cs //Homework1
+// Author      : Miguel Cayetano & Robert Martinez
+// Description : Attached to WeaponToggle object. Allows guns to be toggled with right click
+//==========================================================================================
+
+using UnityEngine;
 
 public class WeaponToggleScript : MonoBehaviour {
 
-	public int currentWeapon = 0;
+	public static int currentWeapon = 0;
 
 	void Start () {
 		selectWeapon();
@@ -10,25 +17,15 @@ public class WeaponToggleScript : MonoBehaviour {
 
 	void Update(){
 
-		int previousWeapon = currentWeapon;
+		if (Input.GetMouseButtonDown(1)){
+            currentWeapon++;
 
-        //Selects shotgun
-		if(Input.GetKeyDown(KeyCode.Alpha1)){
-			currentWeapon = 0;
-		}
+            //Weapon switch interval can only be 0 or 1 therefore if currentWeapon > 1 then switch to 0
+            if (currentWeapon > 1)
+                currentWeapon = 0;
 
-        //Selects AK-47
-		if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentWeapon = 1;
+            selectWeapon();
         }
-       
-        
-        //Calls select weapon function go implement changes
-		if(previousWeapon != currentWeapon){
-			selectWeapon();
-		}
-
 	}
 
 	void selectWeapon(){
