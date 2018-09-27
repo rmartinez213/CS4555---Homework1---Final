@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{405DFCCE-2CF3-F78E-84DA-A837D686B9C6}</ProjectGuid>
+    <ProjectGuid>{27EA7F00-44EE-3A9E-EFD7-7F75B7E5C2B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -55,16 +55,16 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\ScreenshotTaker.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>/home/rmart1nez/Desktop/3D Video Game Programming/AIDoneHW1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>/home/rmart1nez/Desktop/Test/CS4555---Homework1---Final/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/home/rmart1nez/Desktop/3D Video Game Programming/AIDoneHW1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>/home/rmart1nez/Desktop/Test/CS4555---Homework1---Final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>/home/rmart1nez/Desktop/3D Video Game Programming/AIDoneHW1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>/home/rmart1nez/Desktop/Test/CS4555---Homework1---Final/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>/home/rmart1nez/Desktop/3D Video Game Programming/AIDoneHW1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>/home/rmart1nez/Desktop/Test/CS4555---Homework1---Final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/home/rmart1nez/Unity-2018.2.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -351,7 +351,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{0D443497-9205-FD21-17F3-92B1D997574B}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{4CA1B09B-7BA2-C321-860A-54F6839A7BEC}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

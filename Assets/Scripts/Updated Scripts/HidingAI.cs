@@ -11,7 +11,7 @@ using System.Collections;
 public class HidingAI : MonoBehaviour
 {
     public float speed = 3.0f;
-    public float obstacleRange = 1.0f;
+    public float obstacleRange = 0.1f;
     public float closeDistance = 15.0F; //distance between player and enemy
 
     [SerializeField] private GameObject fireballPrefab;
