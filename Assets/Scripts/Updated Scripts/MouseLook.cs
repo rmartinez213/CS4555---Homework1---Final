@@ -32,8 +32,8 @@ public class MouseLook : MonoBehaviour {
 	public float sensitivityHor = 5.0f;
 	public float sensitivityVert = 5.0f;
 	
-	public float minimumVert = -45.0f;
-	public float maximumVert = 45.0f;
+	public float minimumVert = -30.0f;
+	public float maximumVert = 30.0f;
 
 	private float _rotationX = 0;
 	

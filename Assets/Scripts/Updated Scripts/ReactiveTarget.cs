@@ -2,11 +2,16 @@
 using System.Collections;
 
 public class ReactiveTarget : MonoBehaviour {
+    private Animator _animator;
 
-	private int EnemyHealth = 2;
+
+    private int EnemyHealth = 2;
 
 	public void ReactToHit(int damage) {
-		WanderingAI behavior = GetComponent<WanderingAI>();
+        _animator = GetComponent<Animator>();
+        WanderingAnim aliveanim = GetComponent<WanderingAnim>(); // for enemy1 anim
+        BystandAnim bystander = GetComponent<BystandAnim>();    //for bystander anim
+        WanderingAI behavior = GetComponent<WanderingAI>();
         HidingAI hiding = GetComponent<HidingAI>();
         RunAwayAI running = GetComponent<RunAwayAI>();
 //        SceneController enemies = GetComponent<SceneController>();
@@ -14,14 +19,26 @@ public class ReactiveTarget : MonoBehaviour {
 //            Debug.LogError("Cant find SceneController ");
 //        }
 		EnemyHealth = EnemyHealth - damage;
+        Debug.Log("Someone got hit");
 
 		if (EnemyHealth == 0){
-			if (behavior != null)
+            
+            if (behavior != null)
 			{
 				behavior.SetAlive(false);
 				StartCoroutine(Die());
 			}
-		}
+            if (aliveanim != null) {
+                aliveanim.SetAlive(false);
+                StartCoroutine(Die());
+            }
+            if (bystander != null)
+            {
+                Debug.Log("WOman should be dead");
+                bystander.SetAlive(false);
+                StartCoroutine(Die());
+            }
+        }
         if (hiding != null) {
             hiding.SetAlive(false);
 			StartCoroutine(Die());
@@ -39,13 +56,16 @@ public class ReactiveTarget : MonoBehaviour {
 
 	private IEnumerator Die() {
 
-		this.transform.Rotate(-90, 0, 0);
+        //this.transform.Rotate(-90, 0, 0);
         //What I added
-		//Vector3 pos = transform.position;
-		//pos.y = -1.25f;
-		//this.transform.position = pos;
+        //Vector3 pos = transform.position;
+        //pos.y = -1.25f;
+        //this.transform.position = pos;
 
-		yield return new WaitForSeconds(1.5f);
+   //     _animator.SetBool("isDead", true);
+        
+
+        yield return new WaitForSeconds(3.5f);
         Destroy(this.gameObject);
     }
 

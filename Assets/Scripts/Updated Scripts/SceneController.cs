@@ -38,10 +38,10 @@ public class SceneController : MonoBehaviour
         Debug.Log("Spawning in the beginning: " + randomInitialEnemies);
         listOfEnemies = new GameObject[10]; //size of 10, since there can only be max of 10 enemies on the field
 
-        randomPos[0] = new Vector3(-8.5f, -0.737f, -7f);
-        randomPos[1] = new Vector3(-11.5f, -0.737f, -10.5f);
-        randomPos[2] = new Vector3(-9f, -0.737f, 4f);
-        randomPos[3] = new Vector3(35f, -0.737f, -9f);
+        randomPos[0] = new Vector3(-8.5f, -1.5f, -7f);
+        randomPos[1] = new Vector3(-11.5f, -1.5f, -10.5f);
+        randomPos[2] = new Vector3(-9f, -1.5f, 4f);
+        randomPos[3] = new Vector3(35f, -1.5f, -9f);
 
         for (int i = 0; i < randomInitialEnemies; i++){ //instantiate the number of ran enemies as GameObjects 
             randomEnemyType = Random.Range(1, 4);
@@ -50,14 +50,14 @@ public class SceneController : MonoBehaviour
                 //listOfEnemies[i] = Instantiate(enemyPrefab) as GameObject;
                 //Xrange = Random.Range(-24,11);
                 //Zrange = Random.Range(-10, 22);
-                //listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                //listOfEnemies[i].transform.position = new Vector3(Xrange, -1.75f, Zrange);
                 //float angle = Random.Range(0, 360);
                 //listOfEnemies[i].transform.Rotate(0, angle, 0);
 
                 Xrange = Random.Range(-22, -13);
                 Zrange = Random.Range(-38, -20);
                 listOfEnemies[i] = Instantiate(enemyPrefab) as GameObject;
-                listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                listOfEnemies[i].transform.position = new Vector3(Xrange, -1.8f, Zrange);
                 float angle = Random.Range(0, 360);
                 listOfEnemies[i].transform.Rotate(0, angle, 0);
             }
@@ -65,7 +65,7 @@ public class SceneController : MonoBehaviour
             {
                 int randomEnemy2location = Random.Range(0,4);
                 listOfEnemies[i] = Instantiate(enemy2Prefab) as GameObject;
-                listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -0.737f, randomPos[randomEnemy2location].z);
+                listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -1.7f, randomPos[randomEnemy2location].z);
                 float angle = Random.Range(0, 360);
                 listOfEnemies[i].transform.Rotate(0, angle, 0);
             }
@@ -74,7 +74,7 @@ public class SceneController : MonoBehaviour
                 Xrange = Random.Range(35, 44);
                 Zrange = Random.Range(-28, 14);
                 listOfEnemies[i] = Instantiate(enemy3Prefab) as GameObject;
-                listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                listOfEnemies[i].transform.position = new Vector3(Xrange, -1.75f, Zrange);
                 float angle = Random.Range(0, 360);
                 listOfEnemies[i].transform.Rotate(0, angle, 0);
             }
@@ -112,7 +112,7 @@ public class SceneController : MonoBehaviour
                     Xrange = Random.Range(-22, -13);
                     Zrange = Random.Range(-38, -20);
                     listOfEnemies[i] = Instantiate(enemyPrefab) as GameObject;
-                    listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    listOfEnemies[i].transform.position = new Vector3(Xrange, -1.8f, Zrange);
                     float angle = Random.Range(0, 360);
                     listOfEnemies[i].transform.Rotate(0, angle, 0);
                 }
@@ -120,7 +120,7 @@ public class SceneController : MonoBehaviour
                 {
                     int randomEnemy2location = Random.Range(0, 4);
                     listOfEnemies[i] = Instantiate(enemy2Prefab) as GameObject;
-                    listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -0.737f, randomPos[randomEnemy2location].z);
+                    listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -1.7f, randomPos[randomEnemy2location].z);
                     float angle = Random.Range(0, 360);
                     listOfEnemies[i].transform.Rotate(0, angle, 0);
                 }
@@ -129,7 +129,7 @@ public class SceneController : MonoBehaviour
                     Xrange = Random.Range(35, 44);
                     Zrange = Random.Range(-28, 14);
                     listOfEnemies[i] = Instantiate(enemy3Prefab) as GameObject;
-                    listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    listOfEnemies[i].transform.position = new Vector3(Xrange, -1.75f, Zrange);
                     float angle = Random.Range(0, 360);
                     listOfEnemies[i].transform.Rotate(0, angle, 0);
                 }
@@ -164,14 +164,14 @@ public class SceneController : MonoBehaviour
                     //listOfEnemies[i] = Instantiate(enemyPrefab) as GameObject;
                     //Xrange = Random.Range(-24, 11);
                     //Zrange = Random.Range(-10, 22);
-                    //listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    //listOfEnemies[i].transform.position = new Vector3(Xrange, -1.75f, Zrange);
                     //float angle = Random.Range(0, 360);
                     //listOfEnemies[i].transform.Rotate(0, angle, 0);
 
                     Xrange = Random.Range(-22, -13);
                     Zrange = Random.Range(-38, -20);
                     listOfEnemies[i] = Instantiate(enemyPrefab) as GameObject;
-                    listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    listOfEnemies[i].transform.position = new Vector3(Xrange, -1.8f, Zrange);
                     float angle = Random.Range(0, 360);
                     listOfEnemies[i].transform.Rotate(0, angle, 0);
                 }
@@ -179,7 +179,7 @@ public class SceneController : MonoBehaviour
                 {
                     int randomEnemy2location = Random.Range(0, 4);
                     listOfEnemies[i] = Instantiate(enemy2Prefab) as GameObject;
-                    listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -0.737f, randomPos[randomEnemy2location].z);
+                    listOfEnemies[i].transform.position = new Vector3(randomPos[randomEnemy2location].x, -1.7f, randomPos[randomEnemy2location].z);
                     float angle = Random.Range(0, 360);
                     listOfEnemies[i].transform.Rotate(0, angle, 0);
                 }
@@ -188,7 +188,7 @@ public class SceneController : MonoBehaviour
                     Xrange = Random.Range(35, 44);
                     Zrange = Random.Range(-28, 14);
                     listOfEnemies[i] = Instantiate(enemy3Prefab) as GameObject;
-                    listOfEnemies[i].transform.position = new Vector3(Xrange, -0.737f, Zrange);
+                    listOfEnemies[i].transform.position = new Vector3(Xrange, -1.75f, Zrange);
                     float angle = Random.Range(0, 360);
                     listOfEnemies[i].transform.Rotate(0, angle, 0);
                 }
