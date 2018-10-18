@@ -16,27 +16,48 @@ using System.Collections;
 public class FPSInput : MonoBehaviour {
 	public float speed = 6.0f;
 	public float gravity = -9.8f;
-
+    private bool grounded = false;
 	private CharacterController _charController;
+    private float verticalVelocity;
+    private float jumpForce = 10.0f;
 	
 	void Start() {
 		_charController = GetComponent<CharacterController>();
 	}
 	
 	void Update() {
-		//transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
-              
+        //transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
 
+        if (_charController.isGrounded)
+        {
+            verticalVelocity = gravity * Time.deltaTime;
 
-		float deltaX = Input.GetAxis("Horizontal") * speed;
-		float deltaZ = Input.GetAxis("Vertical") * speed;
-		Vector3 movement = new Vector3(deltaX, 0, deltaZ);
-		movement = Vector3.ClampMagnitude(movement, speed);      
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                verticalVelocity = jumpForce;
+            }
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+        //
+        //Vector3 moveV = Vector3.zero;
+        //moveV.y = Input.GetAxis("Horizontal") * 5.0f;
+        //moveV.y = verticalVelocity;
+        //moveV.x = Input.GetAxis("Vertical") * 5.0f;
+        //_charController.Move(moveV * Time.deltaTime);
+        //
 
-		movement.y = gravity;
+        float deltaX = Input.GetAxis("Horizontal") * speed;
+        float deltaZ = Input.GetAxis("Vertical") * speed;
+        Vector3 movement = new Vector3(deltaX, verticalVelocity, deltaZ);
+        movement = Vector3.ClampMagnitude(movement, speed);
 
-		movement *= Time.deltaTime;
-		movement = transform.TransformDirection(movement);
-		_charController.Move(movement);
-	}
+        //movement.y = verticalVelocity;
+
+        movement *= Time.deltaTime;
+        movement = transform.TransformDirection(movement);
+        _charController.Move(movement);
+    }
 }
