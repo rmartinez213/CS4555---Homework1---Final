@@ -20,9 +20,11 @@ public class FPSInput : MonoBehaviour {
 	private CharacterController _charController;
     private float verticalVelocity;
     private float jumpForce = 10.0f;
+    Rigidbody rb;
 	
 	void Start() {
 		_charController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	void Update() {
@@ -36,9 +38,15 @@ public class FPSInput : MonoBehaviour {
             {
                 verticalVelocity = jumpForce;
             }
+         
         }
         else
         {
+            //verticalVelocity += gravity * Time.deltaTime;
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                verticalVelocity = 11;
+            }
             verticalVelocity += gravity * Time.deltaTime;
         }
         //
